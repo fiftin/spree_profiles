@@ -11,7 +11,7 @@ Installation
 In your `Gemfile`:
 
 ```ruby
-gem 'spree_profiles', :git => git://github.com/Johann-dotgee/spree_profiles.git
+gem 'spree_profiles', :git => 'git://github.com/Johann-dotgee/spree_profiles.git'
 ```
 
 Then, just run a
