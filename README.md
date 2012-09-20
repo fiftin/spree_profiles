@@ -1,21 +1,28 @@
-SpreeProfiles
-=============
+Spree Profiles
+==============
 
-Introduction goes here.
+This gem has been created to add profiles to Spree's users.
+When your users will begin the checkout process, the billing address will automatically be filled.
 
 
-Example
-=======
+Installation
+============
 
-Example goes here.
+In your `Gemfile`:
 
-Testing
--------
+```ruby
+gem 'spree_profiles', :git => git://github.com/Johann-dotgee/spree_profiles.git
+```
 
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against.
+Then, just run a
+```
+bundle install
+```
 
-    $ bundle
-    $ bundle exec rake test_app
-    $ bundle exec rspec spec
+And after that, run
+```ruby
+rails g spree_profiles:install
+```
 
-Copyright (c) 2012 [name of extension creator], released under the New BSD License
+You can take a look at `config/initializers/spree_videos.rb`
+There is some options that you can configure.
