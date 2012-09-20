@@ -23,6 +23,3 @@ And after that, run
 ```ruby
 rails g spree_profiles:install
 ```
-
-You can take a look at `config/initializers/spree_videos.rb`
-There is some options that you can configure.
