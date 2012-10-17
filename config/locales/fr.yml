@@ -1,0 +1,10 @@
+fr:
+  first_name: Prénom
+  last_name: Nom
+  email: Email
+  phone: Numéro de téléphone
+  address: Adresse
+  zip: Code Postal
+  city: Ville
+  state: Département
+  country: Pays
