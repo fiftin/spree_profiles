@@ -1,21 +1,38 @@
-SpreeProfiles
+Spree Profiles (spree_profiles)
 =============
 
-Introduction goes here.
+Add profiles to your spree users. They can set their information and write less during the checkout process.
 
 
-Example
-=======
+Demo
+=====
 
-Example goes here.
+If you want to test it, just visite the demo website and try to modify your profile
+
+http://dotspree-facebook.srvdev02.dotgee.fr/products
+
+
+Installation
+============
+In your `Gemfile`:
+```ruby
+ gem 'spree_profiles', :git => 'https://github.com/Johann-dotgee/spree_profiles.git'
+```
+
+Then, just run
+```bash
+ bundle install
+ bundle exec rails g spree_profiles:install
+ rake db:migrate
+```
+
 
 Testing
 -------
 
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against.
+To do
 
-    $ bundle
-    $ bundle exec rake test_app
-    $ bundle exec rspec spec
 
-Copyright (c) 2012 [name of extension creator], released under the New BSD License
+
+
+Copyright (c) 2012 [dotgee], released under the New BSD License
