@@ -3,23 +3,42 @@ Spree Profiles
 
 This gem has been created to add profiles to Spree's users.
 When your users will begin the checkout process, the billing address will automatically be filled.
+Spree Profiles (spree_profiles)
+=============
+
+Add profiles to your spree users. They can set their information and write less during the checkout process.
+
+
+Demo
+=====
+
+If you want to test it, just visite the demo website and try to modify your profile
+
+http://dotspree-facebook.srvdev02.dotgee.fr/products
 
 
 Installation
 ============
 
 In your `Gemfile`:
-
 ```ruby
-gem 'spree_profiles', :git => 'git://github.com/Johann-dotgee/spree_profiles.git'
+ gem 'spree_profiles', :git => 'https://github.com/dotgee/spree_profiles.git'
 ```
 
-Then, just run a
-```
-bundle install
+Then, just run
+```bash
+ bundle install
+ bundle exec rails g spree_profiles:install
+ rake db:migrate
 ```
 
-And after that, run
-```ruby
-rails g spree_profiles:install
-```
+
+Testing
+-------
+
+To do
+
+
+
+
+Copyright (c) 2012 [dotgee], released under the New BSD License

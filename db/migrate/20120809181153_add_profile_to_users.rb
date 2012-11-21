@@ -11,13 +11,13 @@ class AddProfileToUsers < ActiveRecord::Migration
   end
 
   def down
-    remove_column :spree_users, :first_name, :string
-    remove_column :spree_users, :last_name, :string
-    remove_column :spree_users, :address, :string
-    remove_column :spree_users, :city, :string
-    remove_column :spree_users, :country, :string
-    remove_column :spree_users, :state, :string
-    remove_column :spree_users, :zip, :integer
-    remove_column :spree_users, :phone, :string
+    remove_column :spree_users, :first_name
+    remove_column :spree_users, :last_name
+    remove_column :spree_users, :address
+    remove_column :spree_users, :city
+    remove_column :spree_users, :country
+    remove_column :spree_users, :state
+    remove_column :spree_users, :zip
+    remove_column :spree_users, :phone
   end
 end

@@ -12,8 +12,8 @@ module SpreeProfiles
         inject_into_file 'app/assets/stylesheets/admin/all.css', " *= require admin/spree_profiles\n", :before => /\*\//, :verbose => true
       end
 
-      def add_migrations
-        run 'rake railties:install:migrations FROM=spree_videos'
+      def migrations
+        run 'bundle exec rake railties:install:migrations FROM=spree_profiles'
       end
 
       def run_migrations
