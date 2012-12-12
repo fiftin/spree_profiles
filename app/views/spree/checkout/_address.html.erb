@@ -34,7 +34,7 @@
       <p class="field" id="bcountry">
         <%= bill_form.label :country_id, t(:country) %><span class="required">*</span><br />
         <span id="bcountry">
-          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {:selected => current_user.country.nil? ? {} : available_countries.find{|key,value| key["name"] == current_user.country}.id}, {:class => 'required'} %>
+          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {:selected => current_user.country.blank? ? {} : available_countries.find{|key,value| key["name"] == current_user.country}.id}, {:class => 'required'} %>
         </span>
       </p>
 
