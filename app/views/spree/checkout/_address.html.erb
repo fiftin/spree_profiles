@@ -5,11 +5,11 @@
     <div class="inner" data-hook="billing_inner">
       <p class="field" id="bfirstname">
         <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
-        <%= bill_form.text_field :firstname, :class => 'required', :value => current_user.first_name %>
+        <%= bill_form.text_field :firstname, :class => 'required', :value => spree_current_user.first_name %>
       </p>
       <p class="field" id="blastname">
         <%= bill_form.label :lastname, t(:last_name) %><span class="required">*</span><br />
-        <%= bill_form.text_field :lastname, :class => 'required', :value => current_user.last_name %>
+        <%= bill_form.text_field :lastname, :class => 'required', :value => spree_current_user.last_name %>
       </p>
       <% if Spree::Config[:company] %>
         <p class="field" id="bcompany">
@@ -19,7 +19,7 @@
       <% end %>
       <p class="field" id="baddress1">
         <%= bill_form.label :address1, t(:street_address) %><span class="required">*</span><br />
-        <%= bill_form.text_field :address1, :class => 'required', :value => current_user.address %>
+        <%= bill_form.text_field :address1, :class => 'required', :value => spree_current_user.address %>
       </p>
       <p class="field" id="baddress2">
         <%= bill_form.label :address2, t(:street_address_2) %><br />
@@ -28,13 +28,13 @@
 
       <p class="field" id="bcity">
         <%= bill_form.label :city, t(:city) %><span class="required">*</span><br />
-        <%= bill_form.text_field :city, :class => 'required', :value => current_user.city %>
+        <%= bill_form.text_field :city, :class => 'required', :value => spree_current_user.city %>
       </p>
 
       <p class="field" id="bcountry">
         <%= bill_form.label :country_id, t(:country) %><span class="required">*</span><br />
         <span id="bcountry">
-          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {:selected => current_user.country.blank? ? {} : available_countries.find{|key,value| key["name"] == current_user.country}.id}, {:class => 'required'} %>
+          <%= bill_form.collection_select :country_id, available_countries, :id, :name, {:selected => spree_current_user.country.blank? ? {} : available_countries.find{|key,value| key["name"] == spree_current_user.country}.id}, {:class => 'required'} %>
         </span>
       </p>
 
@@ -64,11 +64,11 @@
 
       <p class="field" id="bzipcode">
         <%= bill_form.label :zipcode, t(:zip) %><span class="required">*</span><br />
-        <%= bill_form.text_field :zipcode, :class => 'required', :value => current_user.zip %>
+        <%= bill_form.text_field :zipcode, :class => 'required', :value => spree_current_user.zip %>
       </p>
       <p class="field" id="bphone">
         <%= bill_form.label :phone, t(:phone) %><span class="required">*</span><br />
-        <%= bill_form.phone_field :phone, :class => 'required', :value => current_user.phone %>
+        <%= bill_form.phone_field :phone, :class => 'required', :value => spree_current_user.phone %>
       </p>
       <% if Spree::Config[:alternative_billing_phone] %>
         <p class="field" id="baltphone">
@@ -86,7 +86,7 @@
   <%= form.fields_for :ship_address do |ship_form| %>
     <legend><%= t(:shipping_address) %></legend>
     <p class="field checkbox" data-hook="use_billing">
-      <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %> 
+      <%= check_box_tag 'order[use_billing]', '1', (!(@order.bill_address.empty? && @order.ship_address.empty?) && @order.bill_address.same_as?(@order.ship_address)) %>
       <%= label_tag :order_use_billing, t(:use_billing_address), :id => 'use_billing' %>
     </p>
     <div class="inner" data-hook="shipping_inner">
@@ -171,4 +171,3 @@
 <div class="form-buttons" data-hook="buttons">
   <%= submit_tag t(:save_and_continue), :class => 'continue button primary' %>
 </div>
-

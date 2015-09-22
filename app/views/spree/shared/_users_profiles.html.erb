@@ -1,9 +1,9 @@
 <dl id="user-info">
 <dt></dt><dd><%= link_to t(:edit_account), edit_account_path, :style => "margin-left:400px;", :class => "button" %></dd>
   <% ["first_name", "last_name", "email", "phone", "address", "zip", "city", "state", "country"].each do |info| %>
-    <% unless current_user.send(info).blank? %>
+    <% unless spree_current_user.send(info).blank? %>
       <dt><%= t(:"#{info}") %></dt>
-      <dd><%= current_user.send(info) %>
+      <dd><%= spree_current_user.send(info) %>
     <% end %>
   <% end %>
 </dl>
